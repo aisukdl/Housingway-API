@@ -1,0 +1,9 @@
+//world list gaia
+exports.GAIA_ALEXANDER = 'ALEXANDER';
+exports.GAIA_BAHAMUT = 'BAHAMUT';
+exports.GAIA_DURANDAL = 'DURANDAL';
+exports.GAIA_FENRIR = 'FENRIR';
+exports.GAIA_IFRIT = 'IFRIT';
+exports.GAIA_RIDILL = 'RIDILL';
+exports.GAIA_TIAMAT = 'TIAMAT';
+exports.GAIA_ULTIMA = 'ULTIMA';

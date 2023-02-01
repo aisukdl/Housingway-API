@@ -1,0 +1,9 @@
+//world list mana
+exports.MANA_ANIMA = 'ANIMA';
+exports.MANA_ASURA = 'ASURA';
+exports.MANA_CHOCOBO = 'CHOCOBO';
+exports.MANA_HADES = 'HADES';
+exports.MANA_IXION = 'IXION';
+exports.MANA_MASAMUNE = 'MASAMUNE';
+exports.MANA_PANDAEMONIUM = 'PANDAEMONIUM';
+exports.MANA_TITAN = 'TITAN';

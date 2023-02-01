@@ -1,0 +1,9 @@
+//world list elemental
+exports.ELE_AEGIS = 'AEGIS';
+exports.ELE_ATOMOS = 'ATOMOS';
+exports.ELE_CARBUNCLE = 'CARBUNCLE';
+exports.ELE_GARUDA = 'GARUDA';
+exports.ELE_GUNGNIR = 'GUNGNIR';
+exports.ELE_KUJATA = 'KUJATA';
+exports.ELE_TONBERRY = 'TONBERRY';
+exports.ELE_TYPHON = 'TYPHON';
