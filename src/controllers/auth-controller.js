@@ -20,3 +20,25 @@ exports.register = async (req,res,next) => {
         next(err);
     }
 }
+
+exports.login = async (req,res,next) => {
+    try {
+        const value = req.body;
+        const user = await User.findOne({
+            where: {
+                username: value.username
+            }
+        });
+        // if (!user){
+        //     //create error
+        // }
+
+        const isCorrect = await bcrypt.compare(value.password, user.password);
+        if (!isCorrect) {
+            //create error message
+        }
+        res.status(200).json({ message : "login success"})
+    } catch (err) {
+        next(err)
+    }
+}
