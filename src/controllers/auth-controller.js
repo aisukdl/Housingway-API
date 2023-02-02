@@ -1,6 +1,10 @@
 const { Op } = require('sequelize');
 const bcrypt = require('bcryptjs');
 const {User} = require('../models')
+const jwt = require('jsonwebtoken');
+require('dotenv');
+
+
 exports.register = async (req,res,next) => {
     try {
         const value = req.body;
@@ -37,7 +41,20 @@ exports.login = async (req,res,next) => {
         if (!isCorrect) {
             //create error message
         }
-        res.status(200).json({ message : "login success"})
+
+        const accessToken = jwt.sign(
+            {
+                id : user.id,
+                username: user.username,
+                email: user.email,
+                profileImage: user.profileImage
+            },
+            process.env.JWT_SECRET_KEY,
+            {
+                expiresIn: process.env.JWT_EXPIRES_IN
+            }
+        );
+        res.status(200).json({ accessToken })
     } catch (err) {
         next(err)
     }
