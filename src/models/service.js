@@ -6,13 +6,7 @@ const {
     SERVICE_INTERIOR_MEDIUM,
     SERVICE_INTERIOR_SMALL,
     TYPE_FC,
-    TYPE_PRIVATE,
-    PRICE_EXTERIOR_LARGE,
-    PRICE_EXTERIOR_MEDIUM,
-    PRICE_EXTERIOR_SMALL,
-    PRICE_INTERIOR_LARGE,
-    PRICE_INTERIOR_MEDIUM,
-    PRICE_INTERIOR_SMALL
+    TYPE_PRIVATE
 } = require('../config/constant');
 
 module.exports = (sequelize, DataTypes) => {
@@ -35,14 +29,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false
       },
       price: {
-        type: DataTypes.ENUM(
-            PRICE_EXTERIOR_LARGE,
-            PRICE_EXTERIOR_MEDIUM,
-            PRICE_EXTERIOR_SMALL,
-            PRICE_INTERIOR_LARGE,
-            PRICE_INTERIOR_MEDIUM,
-            PRICE_INTERIOR_SMALL
-        ),
+        type: DataTypes.INTEGER,
         allowNull: false
       }
     },
