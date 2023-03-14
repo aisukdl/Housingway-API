@@ -4,9 +4,7 @@ const {
     SERVICE_EXTERIOR_SMALL,
     SERVICE_INTERIOR_LARGE,
     SERVICE_INTERIOR_MEDIUM,
-    SERVICE_INTERIOR_SMALL,
-    TYPE_FC,
-    TYPE_PRIVATE
+    SERVICE_INTERIOR_SMALL
 } = require('../config/constant');
 
 module.exports = (sequelize, DataTypes) => {
@@ -24,13 +22,13 @@ module.exports = (sequelize, DataTypes) => {
         ),
         allowNull: false
       },
-      houseType: {
-        type:DataTypes.ENUM(TYPE_FC,TYPE_PRIVATE),
-        allowNull: false
-      },
       price: {
         type: DataTypes.INTEGER,
         allowNull: false
+      },
+      isActive: {
+        type: DataTypes.BOOLEAN,
+        defaultValue: false
       }
     },
     { underscored: true,
@@ -43,7 +41,7 @@ module.exports = (sequelize, DataTypes) => {
             name: 'serviceId',
             allowNull: false
         },
-        onDelete : 'RESTRICT'
+        onDelete : 'CASCADE'
     });
   };
 

@@ -20,7 +20,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
         primaryKey: true
       },
-      onDelete: 'RESTRICT'
+      onDelete: 'CASCADE'
     });
   };
 

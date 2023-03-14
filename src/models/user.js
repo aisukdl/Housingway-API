@@ -23,6 +23,10 @@ module.exports = (sequelize, DataTypes) => {
           allowNull: false
         },
         profileImage: DataTypes.STRING,
+        role: {
+          type: DataTypes.STRING,
+          defaultValue: 'CUSTOMER'
+        }
       },
       {
         underscored: true,
@@ -34,7 +38,7 @@ module.exports = (sequelize, DataTypes) => {
         User.hasMany(db.Order, {
           as: 'userId',
           allowNull: false,
-          onDelete: 'RESTRICT'
+          onDelete: 'CASCADE'
         });
       };
 
